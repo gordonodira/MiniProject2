@@ -14,6 +14,8 @@ class UsersTableTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+        $user=User::find(1);
+        $this->assertInternalType('int',$user->id);
+        //$this->assertTrue(true);
     }
 }

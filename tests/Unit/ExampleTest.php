@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use PHPUnit\Framework\Constraint\IsType;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
@@ -34,7 +35,13 @@ class ExampleTest extends TestCase
         $this->assertTrue($user->delete());
 
     }
-   
 
+    public function testRecordCount() {
+          $users=User::All();
+
+        $recordCount =$users->Count();
+        $this->assertInternalType( IsType::TYPE_INT,$recordCount);
+          $recordCount=$users->count();
+         }
 
     }

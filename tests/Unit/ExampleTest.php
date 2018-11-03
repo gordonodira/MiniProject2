@@ -18,40 +18,56 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $user=new User();
-        $user->name='Gordon Jersey';
-        $user->email='GORDONJERSEY@gmail.com';
-        $user ->password='secret';
+        $user = new User();
+        $user->name = 'Gordon Jersey';
+        $user->email = 'GORDONJERSEY@gmail.com';
+        $user->password = 'secret';
 
         $this->assertTrue($user->save());
     }
 
-    public function testDeleteTest(){
+    public function testDeleteTest()
+    {
 
-        $user=new User();
-        $user->name='Gordon Jerse';
-        $user->email='kimnation@gmail.com';
-        $user ->password='secret';
+        $user = new User();
+        $user->name = 'Gordon Jerse';
+        $user->email = 'kimnation@gmail.com';
+        $user->password = 'secret';
         $user->save();
 
         $this->assertTrue($user->delete());
 
     }
 
-    public function testRecordCount() {
-          $users=User::All();
+    public function testRecordCount()
+    {
+        $users = User::All();
 
-        $recordCount =$users->Count();
-        $this->assertInternalType( IsType::TYPE_INT,$recordCount);
-          $recordCount=$users->count();
-         }
-    public function testCarTest(){
+        $recordCount = $users->Count();
+        $this->assertInternalType(IsType::TYPE_INT, $recordCount);
+        $recordCount = $users->count();
+    }
 
-        $car=new Car();
-        $car->make='Toyota';
-        $car->model='CARC';
-        $car ->year='1999';
+    public function testCarTest()
+    {
+
+        $car = new Car();
+        $car->make = 'Toyota';
+        $car->model = 'CARC';
+        $car->year = '1999';
 
         $this->assertTrue($car->save());
-       }
     }
+
+    public function testCarDeleteTest()
+    {
+
+        $car = new Car();
+        $car->make = 'Toyota';
+        $car->model = 'CARC';
+        $car->year = '1999';
+        $car->save();
+
+        $this->assertTrue($car->delete());
+    }
+}

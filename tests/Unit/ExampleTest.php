@@ -22,4 +22,19 @@ class ExampleTest extends TestCase
 
         $this->assertTrue($user->save());
     }
-}
+
+    public function testDeleteTest(){
+
+        $user=new User();
+        $user->name='Gordon Jerse';
+        $user->email='kimnation@gmail.com';
+        $user ->password='secret';
+        $user->save();
+
+        $this->assertTrue($user->delete());
+
+    }
+   
+
+
+    }

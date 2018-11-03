@@ -78,5 +78,10 @@ class ExampleTest extends TestCase
         $recordCount = $cars->Count();
         $this->assertInternalType(IsType::TYPE_INT, $recordCount);
         $recordCount = $cars->count();
-}
+    }
+
+    public function testRecordCheckCar()
+    {
+        $this->assertInternalType(IsType::TYPE_STRING, gettype(Car::first()->year));;
+    }
 }

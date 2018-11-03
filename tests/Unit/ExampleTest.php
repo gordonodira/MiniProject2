@@ -100,6 +100,14 @@ class ExampleTest extends TestCase
         $car = factory(\App\Car::class)->make();
         $this->assertInstanceOf(\App\Car::class, $car);
 
-    }
+    }public function testCarUpdate()
+{
+    $car = factory(\App\Car::class)->create();
+    $car = \App\Car::find($car->id);
+    $car->year = '2000';
+    $this->assertEquals('2000', $car->year);
+    $car->save();
+
+}
 }
 

@@ -82,8 +82,8 @@ class ExampleTest extends TestCase
 
     //public function testRecordCheckCar()
     //{
-       // $this->assertInternalType(IsType::TYPE_STRING, gettype(Car::first()->year));;
-   // }
+    // $this->assertInternalType(IsType::TYPE_STRING, gettype(Car::first()->year));;
+    // }
 
     public function testUserUpdate()
     {
@@ -94,6 +94,12 @@ class ExampleTest extends TestCase
         $user->save();
 
     }
-}
 
+    public function testCarModel()
+    {
+        $car = factory(\App\Car::class)->make();
+        $this->assertInstanceOf(\App\Car::class, $car);
+
+    }
+}
 

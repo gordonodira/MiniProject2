@@ -109,5 +109,12 @@ class ExampleTest extends TestCase
     $car->save();
 
 }
+
+    public function testCarModel2()
+    {
+        $car = factory(\App\Car::class)->make();
+        $this->assertInstanceOf(\App\Car::class, $car);
+        $this->assertTrue(true);
+    }
 }
 

@@ -16,6 +16,10 @@ class PagesController extends Controller
     {
         return view('pages.contact');
     }
+        function contact2(){
+
+            return view('pages.contactStore');
+    }
     function store(Request $request){
         $name=$request->name;
         return redirect()->route('thanks',['name'=>$name]);

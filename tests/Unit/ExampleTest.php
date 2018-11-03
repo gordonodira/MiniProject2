@@ -80,8 +80,20 @@ class ExampleTest extends TestCase
         $recordCount = $cars->count();
     }
 
-    public function testRecordCheckCar()
+    //public function testRecordCheckCar()
+    //{
+       // $this->assertInternalType(IsType::TYPE_STRING, gettype(Car::first()->year));;
+   // }
+
+    public function testUserUpdate()
     {
-        $this->assertInternalType(IsType::TYPE_STRING, gettype(Car::first()->year));;
+        $user = factory(\App\User::class)->create();
+        $user = \App\User::find($user->id);
+        $user->name = 'Steve Smith';
+        $this->assertEquals('Steve Smith', $user->name);
+        $user->save();
+
     }
 }
+
+

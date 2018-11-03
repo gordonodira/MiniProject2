@@ -70,4 +70,13 @@ class ExampleTest extends TestCase
 
         $this->assertTrue($car->delete());
     }
+
+    public function testRecordCountCar()
+    {
+        $cars = Car::All();
+
+        $recordCount = $cars->Count();
+        $this->assertInternalType(IsType::TYPE_INT, $recordCount);
+        $recordCount = $cars->count();
+}
 }

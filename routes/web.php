@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'pagesController@home')->name('home');
-Route::get('/about', 'pagesController@about')->name('about');
-Route::get('/contact', 'pagesController@contact')->name('contact');
-Route::post('/contact', 'pagesController@store')->name('contact.Store');
-Route::get('/thanks/{name}', 'pagesController@thanks')->name('thanks');
+Route::get('/', 'PagesController@home')->name('home');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::post('/contact', 'PagesController@store')->name('contact.Store');
+Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');
 
 
 Auth::routes();
